@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="panel-body table-responsive">
+		<table class="table text-white">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Full Name</th>
+					<th>Email</th>
+					<th>Marks</th>
+					<th>Gender</th>
+					<th>Country</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr th:each="entry: ${items}" th:object="${entry.value}">
+					<td></td>
+					<td>[[*{fullname}]]</td>
+					<td>[[*{email}]]</td>
+					<td>[[*{marks}]]</td>
+					<td>[[*{gender ? 'Nam':'Nữ'}]]</td>
+					<td>[[*{country}]]</td>
+					<td>
+						<ul class="action-list">
+							<li><a class="btn btn-primary"
+								th:href="@{|/student/edit/${entry.key}|}"><i class="fa fa-edit"></i></a></li>
+							<li><a class="btn btn-primary"
+								th:href="@{|/student/delete/${entry.key}|}"><i class="fa fa-trash"></i></a></li>
+						</ul>
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

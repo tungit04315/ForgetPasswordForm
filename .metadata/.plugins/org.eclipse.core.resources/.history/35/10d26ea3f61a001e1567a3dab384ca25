@@ -1,0 +1,5 @@
+package com.poly.bean;
+
+public class StudentMap {
+
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Quản Lý Sinh Viên</h3>
+                        <p>Lấy Dữ liệu Từ Firebase</p>
+                        <form class="requires-validation" novalidate>
+                            <div class="col-md-12">
+                                <input class="form-control" type="text" ng-model="form.fullname" name="name" placeholder="Full Name" required>
+                                <div class="valid-feedback">Họ và tên hợp lệ!</div>
+                                <div class="invalid-feedback">Họ và tên không được để trống!</div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="email" ng-model="form.email" name="email" placeholder="E-mail Address" required>
+                                <div class="valid-feedback">Email hợp lệ!</div>
+                                <div class="invalid-feedback">Không được để trống email!</div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <select class="form-select mt-3" ng-model="form.country" required>
+                                      <option selected disabled value="">--Chọn quốc gia</option>
+                                      <option value="vn">VIỆT NAM</option>
+                                      <option value="us">UNITED STATES</option>
+                                      
+                               </select>
+                                <div class="valid-feedback">Bạn đã chọn một quốc gia!</div>
+                                <div class="invalid-feedback">Không được để trống quốc gia!</div>
+                            </div>
+
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="text" ng-model="form.marks" name="marks" placeholder="Marks" required>
+                                <div class="valid-feedback">Điểm bạn hợp lệ!</div>
+                                <div class="invalid-feedback">Không để trống điểm!</div>
+                            </div>
+
+
+                            <div class="col-md-12 mt-3">
+                                <label class="mb-3 mr-1" for="gender">Giới tính: </label>
+
+                                <input type="radio" class="btn-check" ng-model="form.gender" name="gender" id="male" ng-value="true" autocomplete="off" required>
+                                <label class="btn btn-sm btn-outline-secondary" for="male">Nam</label>
+
+                                <input type="radio" class="btn-check" ng-model="form.gender" name="gender" id="female" ng-value="false" autocomplete="off" required>
+                                <label class="btn btn-sm btn-outline-secondary" for="female">Nữ</label>
+
+                                <div class="valid-feedback mv-up">Bạn đã chọn giới tính!</div>
+                                <div class="invalid-feedback mv-up">Không được để trống giới tính!</div>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                <label class="form-check-label">Tôi xác nhận tất cả dữ liệu đều chính xác</label>
+                                <div class="invalid-feedback">Vui lòng xác nhận rằng tất cả dữ liệu đã nhập đều chính xác!</div>
+                            </div>
+
+
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" ng-click="add()" class="btn btn-primary">Thêm</button>
+                                <button id="submit" type="submit" ng-click="update()" class="btn btn-primary">Sửa</button>
+                                <button id="submit" type="submit" ng-click="delete(key)" class="btn btn-primary">Xóa</button>
+                                <button id="submit" type="submit" ng-click="reset()" class="btn btn-primary">Làm mới</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

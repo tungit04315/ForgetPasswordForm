@@ -1,0 +1,26 @@
+package com.poly.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.poly.bean.Student;
+import com.poly.bean.StudentMap;
+import com.poly.dao.StudentDAO;
+
+@Controller
+public class RestfulAPIController {
+	
+	@Autowired
+	StudentDAO dao;
+
+	@GetMapping("/student/index")
+	public String getIndex(Model m) {
+		Student student = new Student("","",0.0,true,"vn");
+		m.addAttribute("form", student);
+		StudentMap map = dao.findAll();
+		m.addAttribute("items", map);
+		return "student/index";
+	}
+}

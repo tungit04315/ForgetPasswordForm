@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="panel-body table-responsive">
+		<table class="table text-white">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Full Name</th>
+					<th>Email</th>
+					<th>Marks</th>
+					<th>Gender</th>
+					<th>Country</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr ng-repeat="(key, s) in items">
+					<td>{{s.index}}</td>
+					<td>{{s.fullname}}</td>
+					<td>{{s.email}}</td>
+					<td>{{s.marks}}</td>
+					<td>{{s.gender ? 'Nam':'Nữ'}}</td>
+					<td>{{s.country}}</td>
+					<td>
+						<ul class="action-list">
+							<li><a type="submit" class="btn btn-primary"
+								ng-click="edit(key)"><i class="fa fa-edit"></i></a></li>
+							<li><a type="submit" class="btn btn-primary"
+								ng-click="delete(key)"><i class="fa fa-trash"></i></a></li>
+						</ul>
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
